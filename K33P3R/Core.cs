@@ -40,7 +40,8 @@ namespace K33P3R
             if (_choose == "1") addField();
             else if (_choose == "2") removeField();
             else if (_choose == "3") changeField();
-            else if (_choose == "4") settings();
+            else if (_choose == "4") searchField();
+            else if (_choose == "5") settings();
             else if (_choose == "99") Environment.Exit(0);
             else Console.WriteLine("Errore! Scegliere un opzione!");
 
@@ -119,6 +120,62 @@ namespace K33P3R
 
             pushField();
             Console.WriteLine("\n" + "Campo cambiato correttamente!");
+        }
+
+        private void searchField()
+        {
+            List<int> _findedItems = new List<int>();
+            string _offset = "  ";
+
+            Console.WriteLine("Cercare in base: ");
+            Console.WriteLine("1.All'email");
+            Console.WriteLine("2.Al nome");
+            Console.WriteLine("3.Alla nota");
+            Console.Write("Scelta:");
+            string _choose = Console.ReadLine();
+
+            Console.Write("Inserisci la parola: ");
+            string _word = Console.ReadLine();
+            _word.ToLower();
+
+            Console.Clear();
+            Console.WriteLine("┌─");
+            Console.WriteLine("│" + _word + ":");
+
+            if (_choose == "1")
+                for (int i = 0; i < listEmail.Count - 1; i++)
+                {
+                    if (listEmail[i] == _word)
+                    {
+                        Console.Write("└───> ");
+                        Console.Write("Username: " + listUsername[i] + _offset);
+                        Console.Write("Password: " + listPassword[i] + _offset);
+                        Console.WriteLine("Nota: " + listNote[i]);
+                    }
+                }
+            else if (_choose == "2")
+                for (int i = 0; i < listUsername.Count - 1; i++)
+                {
+                    if (listUsername[i] == _word)
+                    {
+                        Console.Write("└───> ");
+                        Console.Write("Email: " + listEmail[i] + _offset);
+                        Console.Write("Password: " + listPassword[i] + _offset);
+                        Console.WriteLine("Nota: " + listNote[i]);
+                    }
+                }
+            else if (_choose == "3")
+                for (int i = 0; i < listNote.Count - 1; i++)
+                {
+                    if (listNote[i] == _word)
+                    {
+                        Console.Write("└───> ");
+                        Console.Write("Username: " + listEmail[i] + _offset);
+                        Console.Write("Username: " + listUsername[i] + _offset);
+                        Console.WriteLine("Password: " + listPassword[i] + _offset);
+                    }
+                }
+
         }
 
         private void settings()
@@ -289,7 +346,7 @@ namespace K33P3R
             try
             {
                 number = Int32.Parse(str);
-            } 
+            }
             catch
             {
                 Console.WriteLine("ERRORE! Inserire un numero!");
