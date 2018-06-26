@@ -134,7 +134,7 @@ namespace K33P3R
             Console.WriteLine("┌────────────────────────────────────────────────────┐");
             Console.WriteLine("│     << Keep & Secure by xGabbro & Aspired  >>      │");
             Console.WriteLine("├────────────────────────────────────────────────────┤");
-            Console.WriteLine("│ [ - Cerca in base: ]                               │");
+            Console.WriteLine("│ - Cerca in base:                                   │");
             Console.WriteLine("│                                                    │");
             Console.WriteLine("│ - [1]All'email                                     │");
             Console.WriteLine("│ - [2]Al nome                                       │");
