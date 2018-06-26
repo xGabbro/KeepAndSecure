@@ -12,7 +12,7 @@ namespace K33P3R
         {
             string _version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             Console.Clear();
-            Console.Title = "Password K33PER - Login";
+            Console.Title = "Password K&S - Login";
 
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("| << Keep & Secure by xGabbro & Aspired v." + _version + " >> |");
