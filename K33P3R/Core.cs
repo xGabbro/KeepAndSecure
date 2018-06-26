@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace K33P3R
 {
@@ -126,6 +129,7 @@ namespace K33P3R
             Console.WriteLine("");
             if (_choose == "1") changeLoginPassword();
             else if (_choose == "2") formatAll();
+            else if (_choose == "3") exportPasswordTXT();
             else if (_choose == "99") return;
 
         }
@@ -170,6 +174,31 @@ namespace K33P3R
             Properties.Settings.Default.Reset();
             Properties.Settings.Default.Save();
             Properties.Settings.Default.Reload();
+        }
+
+        private void exportPasswordTXT()
+        {
+            SaveFileDialog sfd1 = new SaveFileDialog();
+            sfd1.Filter = "Text file|*.txt";
+            sfd1.Title = "Salva il file .txt";
+
+            if (sfd1.ShowDialog() == DialogResult.OK)
+            {
+                TextWriter sw = new StreamWriter(sfd1.OpenFile());
+
+                for (int i = 0; i < listPassword.Count - 1; i++)
+                {
+                    string _offset = "  ";
+
+                    sw.Write(i + ")" + _offset);
+                    sw.Write("Email: " + listEmail[i] + _offset);
+                    sw.Write("Username: " + listUsername[i] + _offset);
+                    sw.Write("Password: " + listPassword[i] + _offset);
+                    sw.WriteLine("Nota: " + listNote[i]);
+                }
+                sw.Close();
+            }
+
         }
 
         private void loadAndShowField()
