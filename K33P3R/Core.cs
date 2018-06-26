@@ -21,11 +21,11 @@ namespace K33P3R
 
             loadAndShowField();
 
-            Console.WriteLine("1.Per aggiungere un campo");
-            Console.WriteLine("2.Per rimuovere un campo");
-            Console.WriteLine("3.Per modificare un campo");
-            Console.WriteLine("4.Impostazioni");
-            Console.WriteLine("99.Per uscire");
+            Console.WriteLine("- [1]Per aggiungere un campo");
+            Console.WriteLine("- [2]Per rimuovere un campo");
+            Console.WriteLine("- [3]Per modificare un campo");
+            Console.WriteLine("- [4]Impostazioni");
+            Console.WriteLine("- [99]Per uscire");
 
             Console.Write("Scelta: ");
             string _choose = Console.ReadLine();
