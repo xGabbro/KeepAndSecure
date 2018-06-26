@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace K33P3R
 {
@@ -21,7 +17,6 @@ namespace K33P3R
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Password K33P3R by xGabbro & Aspired v." + _version);
             Console.WriteLine("----------------------------------------------" + "\n");
-            updater.Main();
 
             Console.Write("Inserisci la password per accedere: ");
             string _pass = Console.ReadLine(); 
