@@ -127,20 +127,23 @@ namespace K33P3R
             List<int> _findedItems = new List<int>();
             string _offset = "  ";
 
+            Console.Clear();
+
             Console.WriteLine("Cercare in base: ");
             Console.WriteLine("1.All'email");
             Console.WriteLine("2.Al nome");
-            Console.WriteLine("3.Alla nota");
+            Console.WriteLine("3.Alla nota" + "\n");
             Console.Write("Scelta:");
             string _choose = Console.ReadLine();
 
+            Console.WriteLine("");
             Console.Write("Inserisci la parola: ");
             string _word = Console.ReadLine();
             _word.ToLower();
 
             Console.Clear();
             Console.WriteLine("┌─");
-            Console.WriteLine("│" + _word + ":");
+            Console.WriteLine("│" + _word + "");
 
             if (_choose == "1")
                 for (int i = 0; i < listEmail.Count - 1; i++)
@@ -175,7 +178,6 @@ namespace K33P3R
                         Console.WriteLine("Password: " + listPassword[i] + _offset);
                     }
                 }
-
         }
 
         private void settings()
