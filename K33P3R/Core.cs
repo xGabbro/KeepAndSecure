@@ -132,14 +132,14 @@ namespace K33P3R
             Console.WriteLine("┌────────────────────────────────────────────────────┐");
             Console.WriteLine("│     << Keep & Secure by xGabbro & Aspired  >>      │");
             Console.WriteLine("├────────────────────────────────────────────────────┤");
-            Console.WriteLine("│ ([ - Cerca in base: ])                             │");
+            Console.WriteLine("│ [ - Cerca in base: ]                               │");
             Console.WriteLine("│                                                    │");
             Console.WriteLine("│ - [1]All'email                                     │");
             Console.WriteLine("│ - [2]Al nome                                       │");
             Console.WriteLine("│ - [3]Alla nota                                     │");
             Console.WriteLine("│ - [99]Per uscire                                   │");
             Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
-            Console.Write("Scelta:");
+            Console.Write(" --> Scelta:");
             string _choose = Console.ReadLine();
 
             Console.WriteLine("");
@@ -184,6 +184,8 @@ namespace K33P3R
                         Console.WriteLine("Password: " + listPassword[i] + _offset);
                     }
                 }
+            else if (_choose == "99") return;
+
         }
 
         private void settings()
