@@ -126,11 +126,11 @@ namespace K33P3R
 
             Console.WriteLine("┌────────────────────────────────────────────────────┐");
             Console.WriteLine("│     << Keep & Secure by xGabbro & Aspired  >>      │");
-            Console.WriteLine("├─────────────────────────────┬──────────────────────┘");
-            Console.WriteLine("│1.Cambia la Password di login│");
-            Console.WriteLine("│2.Formatta tutto             │");
-            Console.WriteLine("│99.Torna indietro            │");
-            Console.WriteLine("└─────────────────────────────┘" + "\n");
+            Console.WriteLine("├────────────────────────────────────────────────────┤");
+            Console.WriteLine("│ - [1]Cambia la Password di login                   │");
+            Console.WriteLine("│ - [2]Formatta tutto                                │");
+            Console.WriteLine("│ - [99]Torna indietro                               │");
+            Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
 
             Console.WriteLine("Scelta: ");
             string _choose = Console.ReadLine();
