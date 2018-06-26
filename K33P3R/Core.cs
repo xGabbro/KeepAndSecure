@@ -33,6 +33,7 @@ namespace K33P3R
             else if (_choose == "2") removeField();
             else if (_choose == "3") changeField();
             else if (_choose == "4") settings();
+            else if (_choose == "99") Environment.Exit(0);
             else Console.WriteLine("Errore! Scegliere un opzione!");
 
             Console.ReadKey();
