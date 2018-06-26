@@ -28,8 +28,8 @@ namespace K33P3R
             Console.WriteLine("│ - [1]Per aggiungere un campo                       │");
             Console.WriteLine("│ - [2]Per rimuovere un campo                        │");
             Console.WriteLine("│ - [3]Per modificare un campo                       │");
-            Console.WriteLine("4 per cercare e 5 per impostazioni");
-            Console.WriteLine("│ - [4]Impostazioni                                  │");
+            Console.WriteLine("│ - [4]Per cercare                                   │");
+            Console.WriteLine("│ - [5]Impostazioni                                  │");
             Console.WriteLine("│ - [99]Per uscire                                   │");
             Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
 
