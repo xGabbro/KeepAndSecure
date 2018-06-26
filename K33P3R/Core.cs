@@ -45,7 +45,6 @@ namespace K33P3R
             else if (_choose == "99") Environment.Exit(0);
             else Console.WriteLine("Errore! Scegliere un opzione!");
 
-            Console.ReadKey();
             Main();
         }
 
@@ -78,6 +77,7 @@ namespace K33P3R
 
             pushField();
             Console.WriteLine("\n" + "Campo aggiunto correttamente!");
+            Console.ReadKey();
         }
 
         private void removeField()
@@ -93,6 +93,7 @@ namespace K33P3R
 
             pushField();
             Console.WriteLine("\n" + "Campo eliminato correttamente!");
+            Console.ReadKey();
         }
 
         private void changeField()
@@ -120,6 +121,7 @@ namespace K33P3R
 
             pushField();
             Console.WriteLine("\n" + "Campo cambiato correttamente!");
+            Console.ReadKey();
         }
 
         private void searchField()
@@ -141,6 +143,8 @@ namespace K33P3R
             Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
             Console.Write(" --> Scelta:");
             string _choose = Console.ReadLine();
+
+            if (_choose == "99") return;
 
             Console.WriteLine("");
             Console.Write("Inserisci la parola: ");
@@ -184,8 +188,8 @@ namespace K33P3R
                         Console.WriteLine("Password: " + listPassword[i] + _offset);
                     }
                 }
-            else if (_choose == "99") return;
 
+            Console.ReadKey();
         }
 
         private void settings()
@@ -238,6 +242,7 @@ namespace K33P3R
 
             else Console.WriteLine("\n" + "ERRORE! Password attuale errata!");
 
+            Console.ReadKey();
         }
 
         private void formatAll()
