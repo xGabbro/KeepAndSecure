@@ -15,7 +15,7 @@ namespace K33P3R
             Console.Title = "Password K33PER - Login";
 
             Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("Password K33P3R by xGabbro & Aspired v." + _version);
+            Console.WriteLine("K&S by xGabbro & Aspired v." + _version);
             Console.WriteLine("----------------------------------------------" + "\n");
 
             Console.Write("Inserisci la password per accedere: ");
