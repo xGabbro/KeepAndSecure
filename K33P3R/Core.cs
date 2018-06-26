@@ -14,6 +14,8 @@ namespace K33P3R
         List<string> listPassword = new List<string>();
         List<string> listNote = new List<string>();
 
+        int arrayLength;
+
         string offset = "    ";
 
         public void Main()
@@ -145,6 +147,8 @@ namespace K33P3R
             Console.WriteLine("│ - [1]All'email                                     │");
             Console.WriteLine("│ - [2]Al nome                                       │");
             Console.WriteLine("│ - [3]Alla nota                                     │");
+            Console.WriteLine("4.Generale (uguale la parola)");
+            Console.WriteLine("5.Generale (Contiene la parola)");
             Console.WriteLine("│ - [99]Per uscire                                   │");
             Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
             Console.Write(" --> Scelta:");
@@ -173,7 +177,7 @@ namespace K33P3R
                     }
                 }
             else if (_choose == "2")
-                for (int i = 0; i < listUsername.Count - 1; i++)
+                for (int i = 0; i < arrayLength - 1; i++)
                 {
                     if (listUsername[i] == _word)
                     {
@@ -184,16 +188,80 @@ namespace K33P3R
                     }
                 }
             else if (_choose == "3")
-                for (int i = 0; i < listNote.Count - 1; i++)
+                for (int i = 0; i < arrayLength - 1; i++)
                 {
                     if (listNote[i] == _word)
                     {
                         Console.Write("└───> ");
-                        Console.Write("Username: " + listEmail[i] + _offset);
+                        Console.Write("Email: " + listEmail[i] + _offset);
                         Console.Write("Username: " + listUsername[i] + _offset);
-                        Console.WriteLine("Password: " + listPassword[i] + _offset);
+                        Console.Write("Password: " + listPassword[i] + _offset);
+                        Console.WriteLine("Nota: " + listNote[i]);
                     }
                 }
+            else if (_choose == "4")
+            {
+                for (int i = 0; i < arrayLength - 1; i++)
+                {
+
+                    if (listEmail[i] == _word)
+                        if (!(_findedItems.Contains(i)))
+                            _findedItems.Add(i);
+
+                    if (listUsername[i] == _word)
+                        if (!_findedItems.Contains(i))
+                            _findedItems.Add(i);
+
+                    if (listNote[i] == _word)
+                        if (!_findedItems.Contains(i))
+                            _findedItems.Add(i);
+
+                }
+
+                _findedItems.Sort();
+                _findedItems.ForEach(delegate (int number)
+                {
+
+                    Console.Write("└───> ");
+                    Console.Write("Email: " + listEmail[number] + _offset);
+                    Console.Write("Username: " + listUsername[number] + _offset);
+                    Console.Write("Password: " + listPassword[number] + _offset);
+                    Console.WriteLine("Nota: " + listNote[number]);
+
+                });
+
+            }
+            else if (_choose == "5")
+            {
+                for (int i = 0; i < arrayLength - 1; i++)
+                {
+
+                    if (listEmail[i].Contains(_word))
+                        if (!(_findedItems.Contains(i)))
+                            _findedItems.Add(i);
+
+                    if (listUsername[i].Contains(_word))
+                        if (!_findedItems.Contains(i))
+                            _findedItems.Add(i);
+
+                    if (listNote[i].Contains(_word))
+                        if (!_findedItems.Contains(i))
+                            _findedItems.Add(i);
+
+                }
+
+                _findedItems.Sort();
+                _findedItems.ForEach(delegate (int number)
+                {
+
+                    Console.Write("└───> ");
+                    Console.Write("Email: " + listEmail[number] + _offset);
+                    Console.Write("Username: " + listUsername[number] + _offset);
+                    Console.Write("Password: " + listPassword[number] + _offset);
+                    Console.WriteLine("Nota: " + listNote[number]);
+
+                });
+            }
 
             Console.WriteLine("");
             Console.WriteLine("Premere un qualsiasi tasto per continuare...");
@@ -259,7 +327,7 @@ namespace K33P3R
             Console.WriteLine("Sei proprio sicuro di formattare tutto (perderai ogni cosa) [SI/no]:");
             string _answer = Console.ReadLine().ToLower();
 
-            if (_answer == "no") return;
+            if (_answer != "si") return;
 
             Properties.Settings.Default.Reset();
             Properties.Settings.Default.Save();
@@ -306,8 +374,10 @@ namespace K33P3R
             foreach (string _password in Properties.Settings.Default.Password.Split(new[] { offset }, StringSplitOptions.None)) listPassword.Add(_password);
             foreach (string _note in Properties.Settings.Default.Note.Split(new[] { offset }, StringSplitOptions.None)) listNote.Add(_note);
 
+            arrayLength = listPassword.Count;
+
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
-            for (int i = 0; i < listPassword.Count - 1; i++)
+            for (int i = 0; i < arrayLength - 1; i++)
             {
                 string _offset = "  ";
 
@@ -319,7 +389,6 @@ namespace K33P3R
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------------");
             Console.WriteLine("");
-
         }
 
         private void pushField()
