@@ -77,8 +77,9 @@ namespace K33P3R
 
             pushField();
 
+            Console.WriteLine("");
             Console.WriteLine("Premere un qualsiasi tasto per continuare...");
-            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
+            Console.ReadKey();
         }
 
         private void removeField()
@@ -94,8 +95,9 @@ namespace K33P3R
 
             pushField();
 
+            Console.WriteLine("");
             Console.WriteLine("Premere un qualsiasi tasto per continuare...");
-            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
+            Console.ReadKey();
         }
 
         private void changeField()
@@ -123,8 +125,9 @@ namespace K33P3R
 
             pushField();
 
+            Console.WriteLine("");
             Console.WriteLine("Premere un qualsiasi tasto per continuare...");
-            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
+            Console.ReadKey();
         }
 
         private void searchField()
@@ -192,6 +195,7 @@ namespace K33P3R
                     }
                 }
 
+            Console.WriteLine("");
             Console.WriteLine("Premere un qualsiasi tasto per continuare...");
             Console.ReadKey();
         }
