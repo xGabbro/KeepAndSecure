@@ -9,7 +9,7 @@ namespace K33P3R
 {
     class Login
     {
-        Core core = new Core();
+        Core coreR = new Core();
         Updater updater = new Updater();
 
         public void Main()
