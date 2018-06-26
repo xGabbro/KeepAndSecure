@@ -76,8 +76,9 @@ namespace K33P3R
             listNote.Add(_note);
 
             pushField();
-            Console.WriteLine("\n" + "Campo aggiunto correttamente!");
-            Console.ReadKey();
+
+            Console.WriteLine("Premere un qualsiasi tasto per continuare...");
+            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
         }
 
         private void removeField()
@@ -92,8 +93,9 @@ namespace K33P3R
             listNote.RemoveAt(_ID);
 
             pushField();
-            Console.WriteLine("\n" + "Campo eliminato correttamente!");
-            Console.ReadKey();
+
+            Console.WriteLine("Premere un qualsiasi tasto per continuare...");
+            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
         }
 
         private void changeField()
@@ -120,8 +122,9 @@ namespace K33P3R
             if (!(_newNote == "" || _newNote == null)) listNote[_ID] = _newNote;
 
             pushField();
-            Console.WriteLine("\n" + "Campo cambiato correttamente!");
-            Console.ReadKey();
+
+            Console.WriteLine("Premere un qualsiasi tasto per continuare...");
+            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
         }
 
         private void searchField()
@@ -189,6 +192,7 @@ namespace K33P3R
                     }
                 }
 
+            Console.WriteLine("Premere un qualsiasi tasto per continuare...");
             Console.ReadKey();
         }
 
