@@ -147,8 +147,8 @@ namespace K33P3R
             Console.WriteLine("│ - [1]All'email                                     │");
             Console.WriteLine("│ - [2]Al nome                                       │");
             Console.WriteLine("│ - [3]Alla nota                                     │");
-            Console.WriteLine("4.Generale (uguale la parola)");
-            Console.WriteLine("5.Generale (Contiene la parola)");
+            Console.WriteLine("│ - [4]Conforme alla parola                          │");
+            Console.WriteLine("│ - [5]Contenente la parola                          │");
             Console.WriteLine("│ - [99]Per uscire                                   │");
             Console.WriteLine("└────────────────────────────────────────────────────┘" + "\n");
             Console.Write(" --> Scelta:");
